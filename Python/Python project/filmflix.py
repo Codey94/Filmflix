@@ -1,8 +1,10 @@
+from dbConnect import *
 from readFilm import read
 from addFilm import insertFilm
 from updateFilm import update
 from deleteFilm import delete
 from time import sleep
+from filmReport import report
 
 
 def menu():
@@ -14,7 +16,7 @@ def menu():
 		2. Add a new film to the database.
 		3. Update an existing film.
 		4. Delete a film.
-        5. Report.
+                5. Report.
 		6. Exit application.
 	"""
     options = ["1", "2", "3", "4", "5", "6"]
@@ -22,9 +24,9 @@ def menu():
     print(menuUI)
     while choice not in options:
         choice = input("Please select an option from the menu: ")
-    if choice not in options:
-        print(choice, "is not a valid option.")
-        sleep(1)
+        if choice not in options:
+            print(choice, "is not a valid option.")
+            sleep(2)
     return choice
 
 
@@ -44,6 +46,9 @@ if __name__ == "__main__":
             sleep(2)
         elif userChoice == "4":
             delete()
+            sleep(2)
+        elif userChoice == "5":
+            report()
             sleep(2)
         else:
             mainProgram = False

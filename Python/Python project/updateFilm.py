@@ -13,10 +13,12 @@ def update():
         title = input("Enter the new title of the movie:")
         director = input("Enter the new director of the movie:")
         genre = input("Enter the new genre of the movie:")
+        year = input("Enter the new year of the movie")
+        rating = input("Enter the new rating from 1 - 5")
 
         updateSQL = f"""
         UPDATE Films
-        SET Title = "{title}", Artist = "{director}", Genre = "{genre}"
+        SET Title = "{title}", Director = "{director}", Genre = "{genre}", Year = "{year}", Rating = "{rating}"
         WHERE filmID = {filmID};
         
         """
